@@ -129,7 +129,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
   background: 
     linear-gradient(rgba(10,31,68,0.65), rgba(10,31,68,0.65)),
-    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2400&q=100') center/cover no-repeat;
+    url('https://static.vecteezy.com/system/resources/thumbnails/055/947/041/small/a-black-sports-car-is-parked-in-a-showroom-photo.jpeg') center/cover no-repeat;
 }
 .page-hero::before {
   content: '';
