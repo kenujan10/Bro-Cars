@@ -26,6 +26,9 @@
   --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -122,10 +125,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e3a5f 100%);
-  position: relative; overflow: hidden;
-  padding: 4.5rem 1.5rem 3.5rem;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+              url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=1600');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
   text-align: center;
+  color: white;
 
   background: 
     linear-gradient(rgba(10,31,68,0.65), rgba(10,31,68,0.65)),
@@ -281,9 +287,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--navy); margin-bottom: 0.2rem;
 }
 .car-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 700;
-  color: var(--navy); letter-spacing: -0.01em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #caa14a; /* gold tone */
 }
 .car-year {
   font-size: 0.8rem; color: var(--gray-400);
@@ -853,4 +859,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .whatsapp-btn:hover {
     transform: scale(1.08);
+}
+.car-card {
+  transition: 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+.car-btn {
+  transition: 0.3s;
+}
+
+.car-btn:hover {
+  background: black;
+  color: white;
+}
+.car-card-img-wrap {
+  overflow: hidden;
+}
+
+.car-card-img {
+  transition: 0.4s ease;
+}
+
+.car-card:hover .car-card-img {
+  transform: scale(1.05);
+}
+.car-card {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
