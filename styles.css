@@ -803,3 +803,30 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 1px;
   color: #aaa;
 }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo-img {
+    height: 140px;
+    width: auto;
+    margin-top: 50px;
+}
+
+.logo-text h1 {
+    font-size: 2px;
+    font-weight: 800;
+    margin: 0;
+    color: #ffffff;   /* White */
+    letter-spacing: 2px;
+}
+
+.logo-text p {
+    font-size: 14px;
+    margin: 0;
+    color: #b0b0b0;   /* Light grey */
+    letter-spacing: 3px;
+}
