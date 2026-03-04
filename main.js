@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ── Filter tabs (inventory / home) ── */
+  /* ── Filter tabs (Our Vehicles / home) ── */
   document.querySelectorAll('.filter-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const group = tab.closest('.filter-tabs');

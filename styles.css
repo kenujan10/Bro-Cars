@@ -507,7 +507,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .bg-white { background: var(--white); }
 .bg-navy  { background: var(--navy); }
 
-/* ── SIDEBAR FILTER (inventory) ── */
+/* ── SIDEBAR FILTER (Our Vehicles) ── */
 .inv-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start; }
 .filter-panel {
   background: var(--white); border-radius: var(--radius-lg);
