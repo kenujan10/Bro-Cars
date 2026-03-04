@@ -897,3 +897,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     opacity: 1;
   }
 }
+/* Sold Section */
+.sold-section {
+  background: #f8f8f8;
+  padding: 60px 0;
+}
+
+.car-card.sold {
+  opacity: 0.85;
+  position: relative;
+}
+
+.sold-badge {
+  background: #c0392b;
+  color: #fff;
+}
+
+.car-card.sold .car-btn {
+  display: none; /* Hide View Details button for sold cars */
+}
