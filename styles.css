@@ -916,3 +916,375 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .car-card.sold .car-btn {
   display: none; /* Hide View Details button for sold cars */
 }
+/* ═══════════════════════════════════════════════════════
+   Bro Cars UK — Car Details Modal + Image Gallery CSS
+   Paste this into your styles.css file
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Overlay ────────────────────────────────────────── */
+.bcm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;          /* drawer slides from bottom */
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.bcm-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Drawer ─────────────────────────────────────────── */
+.bcm-drawer {
+  background: #fff;
+  width: 100%;
+  max-width: 1060px;
+  max-height: 92vh;
+  border-radius: 20px 20px 0 0;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transform: translateY(60px);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  scroll-behavior: smooth;
+}
+.bcm-overlay.open .bcm-drawer {
+  transform: translateY(0);
+}
+
+/* ── Close button ───────────────────────────────────── */
+.bcm-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 10;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  transition: background 0.2s, transform 0.2s;
+}
+.bcm-close:hover {
+  background: #1a1a2e;
+  color: #fff;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* ── Gallery side ───────────────────────────────────── */
+.bcm-gallery {
+  background: #0d0d14;
+  border-radius: 20px 0 0 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+}
+
+.bcm-main-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #1a1a2e;
+}
+
+.bcm-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.18s ease;
+  display: block;
+}
+
+/* Nav arrows */
+.bcm-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 2;
+}
+.bcm-nav:hover {
+  background: rgba(255,255,255,0.32);
+  transform: translateY(-50%) scale(1.1);
+}
+.bcm-prev { left: 10px; }
+.bcm-next { right: 10px; }
+
+/* Counter */
+.bcm-img-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+/* Thumbnails */
+.bcm-thumbs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.bcm-thumbs::-webkit-scrollbar { display: none; }
+
+.bcm-thumb {
+  width: 72px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  opacity: 0.55;
+  transition: opacity 0.2s, border-color 0.2s, transform 0.2s;
+}
+.bcm-thumb:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+.bcm-thumb.active {
+  border-color: #c9a84c;
+  opacity: 1;
+}
+
+/* ── Details side ───────────────────────────────────── */
+.bcm-details {
+  padding: 32px 30px 32px 26px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bcm-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.bcm-make {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+.bcm-name {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0d0d14;
+  line-height: 1.15;
+  font-family: 'Montserrat', sans-serif;
+}
+.bcm-price-wrap {
+  text-align: right;
+  flex-shrink: 0;
+}
+.bcm-price {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  font-family: 'Montserrat', sans-serif;
+}
+.bcm-badge-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+.badge-new    { background: #1a1a2e; color: #fff; }
+.badge-sale   { background: #c9a84c; color: #fff; }
+.badge-used   { background: #666; color: #fff; }
+
+/* Quick specs grid */
+.bcm-quick-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #f5f5f8;
+  border-radius: 14px;
+  padding: 16px;
+}
+.bcm-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bcm-spec-icon {
+  font-size: 1.1rem;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.bcm-spec-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.bcm-spec-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+}
+.bcm-spec-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* Section title */
+.bcm-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.bcm-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Features list */
+.bcm-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.bcm-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: #333;
+  font-weight: 500;
+}
+.bcm-check {
+  color: #c9a84c;
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Action buttons */
+.bcm-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 4px;
+}
+.bcm-btn-primary {
+  flex: 1;
+  background: #1a1a2e;
+  color: #fff;
+  text-align: center;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+.bcm-btn-primary:hover {
+  background: #c9a84c;
+  transform: translateY(-2px);
+}
+.bcm-btn-secondary {
+  flex: 1;
+  background: transparent;
+  color: #1a1a2e;
+  text-align: center;
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: 2px solid #1a1a2e;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.bcm-btn-secondary:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+  transform: translateY(-2px);
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .bcm-drawer {
+    grid-template-columns: 1fr;
+    border-radius: 18px 18px 0 0;
+    max-height: 96vh;
+  }
+  .bcm-gallery {
+    border-radius: 18px 18px 0 0;
+    position: static;
+    padding: 16px;
+  }
+  .bcm-details {
+    padding: 20px 18px 24px;
+  }
+  .bcm-features {
+    grid-template-columns: 1fr;
+  }
+  .bcm-actions {
+    flex-direction: column;
+  }
+  .bcm-name { font-size: 1.35rem; }
+  .bcm-price { font-size: 1.2rem; }
+}

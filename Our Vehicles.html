@@ -52,61 +52,10 @@
 
 <div class="section">
   <div class="inv-layout">
-    <aside>
-      <div class="filter-panel">
-        <div class="filter-panel-title">&#9883; Filter Cars</div>
-        <div class="filter-group">
-          <label class="filter-label">Make</label>
-          <select class="filter-select">
-            <option>All Makes</option><option>BMW</option>
-            <option>Mercedes-Benz</option><option>Audi</option>
-            <option>Porsche</option><option>Range Rover</option><option>Tesla</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label class="filter-label">Body Type</label>
-          <select class="filter-select">
-            <option>All Types</option><option>SUV</option>
-            <option>Sedan</option><option>Coupe</option><option>Estate</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label class="filter-label">Max Price</label>
-          <select class="filter-select">
-            <option>Any Budget</option><option>Under £20,000</option>
-            <option>Under £40,000</option><option>Under £70,000</option><option>£70,000+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label class="filter-label">Year</label>
-          <select class="filter-select">
-            <option>Any Year</option><option>2024</option><option>2023</option>
-            <option>2022</option><option>2021</option><option>2020 or older</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label class="filter-label">Fuel Type</label>
-          <div class="check-group">
-            <label class="check-label"><input type="checkbox" checked> Petrol</label>
-            <label class="check-label"><input type="checkbox" checked> Diesel</label>
-            <label class="check-label"><input type="checkbox" checked> Electric</label>
-            <label class="check-label"><input type="checkbox" checked> Hybrid</label>
-          </div>
-        </div>
-        <button class="filter-apply-btn">Apply Filters</button>
-      </div>
-    </aside>
+    
 
     <div>
-      <div class="inv-toolbar">
-        <span class="inv-count">Showing <strong>6</strong> vehicles</span>
-        <select class="filter-select" style="width:auto;padding:0.45rem 0.75rem;font-size:0.82rem;">
-          <option>Sort: Newest First</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-          <option>Mileage: Lowest</option>
-        </select>
-      </div>
+      
       <div class="filter-tabs">
         <button class="filter-tab active" data-filter="all" data-target="#invGrid">All</button>
         <button class="filter-tab" data-filter="new" data-target="#invGrid">New</button>
@@ -114,9 +63,9 @@
       </div>
       <div class="car-grid car-grid-2" id="invGrid">
         <div class="car-card" data-cat="new">
-          <div class="car-card-img-wrap"><img src="https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1738682816/evo/2025/02%20Feb/BMW%20M4%202025%20UK%20review%20-8.jpg"" class="car-card-img" alt="BMW M4"><span class="car-badge new">New</span></div>
+          <div class="car-card-img-wrap"><img src="images/Ava-1.jpeg" class="car-card-img" alt="BMW M4"><span class="car-badge new">New</span></div>
           <div class="car-card-body">
-            <div class="car-make">BMW</div><div class="car-name">M4 Competition</div>
+            <div class="car-make"></div><div class="car-name"> Peugeot</div>
             <div class="car-price">£65,000</div>
             <div class="car-year">2023 &bull; 1,200 mi &bull; Auto &bull; Petrol</div>
             <div class="car-specs">
@@ -126,77 +75,7 @@
             </div>
             <a href="#" class="car-btn">View Details &rarr;</a>
           </div>
-        </div>
-        <div class="car-card" data-cat="used">
-          <div class="car-card-img-wrap"><img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80" class="car-card-img" alt="Tesla"></div>
-          <div class="car-card-body">
-            <div class="car-make">Tesla</div><div class="car-name">Model 3 Long Range</div>
-            <div class="car-price">£32,500</div>
-            <div class="car-year">2021 &bull; 15,000 mi &bull; Auto &bull; Electric</div>
-            <div class="car-specs">
-              <div class="car-spec"><span class="car-spec-icon">&#9881;</span>Auto</div>
-              <div class="car-spec"><span class="car-spec-icon">&#9889;</span>Electric</div>
-              <div class="car-spec"><span class="car-spec-icon">&#128200;</span>358 mi</div>
-            </div>
-            <a href="#" class="car-btn">View Details &rarr;</a>
-          </div>
-        </div>
-        <div class="car-card" data-cat="used">
-          <div class="car-card-img-wrap"><img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80" class="car-card-img" alt="Mercedes"><span class="car-badge sale">Sale</span></div>
-          <div class="car-card-body">
-            <div class="car-make">Mercedes-Benz</div><div class="car-name">C-Class AMG Line</div>
-            <div class="car-price">£28,900</div>
-            <div class="car-year">2020 &bull; 32,000 mi &bull; Auto &bull; Diesel</div>
-            <div class="car-specs">
-              <div class="car-spec"><span class="car-spec-icon">&#9881;</span>Auto</div>
-              <div class="car-spec"><span class="car-spec-icon">&#9981;</span>Diesel</div>
-              <div class="car-spec"><span class="car-spec-icon">&#128263;</span>194 BHP</div>
-            </div>
-            <a href="#" class="car-btn">View Details &rarr;</a>
-          </div>
-        </div>
-        <div class="car-card" data-cat="new">
-          <div class="car-card-img-wrap"><img src="https://autonxt.net/wp-content/uploads/2025/08/2025-Audi-RS6-Avant22.jpg" class="car-card-img" alt="Audi RS6"><span class="car-badge new">New</span></div>
-          <div class="car-card-body">
-            <div class="car-make">Audi</div><div class="car-name">RS6 Avant</div>
-            <div class="car-price">£98,000</div>
-            <div class="car-year">2023 &bull; 500 mi &bull; Auto &bull; Petrol</div>
-            <div class="car-specs">
-              <div class="car-spec"><span class="car-spec-icon">&#9881;</span>Auto</div>
-              <div class="car-spec"><span class="car-spec-icon">&#9981;</span>Petrol</div>
-              <div class="car-spec"><span class="car-spec-icon">&#128263;</span>600 BHP</div>
-            </div>
-            <a href="#" class="car-btn">View Details &rarr;</a>
-          </div>
-        </div>
-        <div class="car-card" data-cat="used">
-          <div class="car-card-img-wrap"><img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80" class="car-card-img" alt="Range Rover"></div>
-          <div class="car-card-body">
-            <div class="car-make">Range Rover</div><div class="car-name">Sport HSE</div>
-            <div class="car-price">£45,000</div>
-            <div class="car-year">2019 &bull; 45,000 mi &bull; Auto &bull; Diesel</div>
-            <div class="car-specs">
-              <div class="car-spec"><span class="car-spec-icon">&#9881;</span>Auto</div>
-              <div class="car-spec"><span class="car-spec-icon">&#9981;</span>Diesel</div>
-              <div class="car-spec"><span class="car-spec-icon">&#128263;</span>306 BHP</div>
-            </div>
-            <a href="#" class="car-btn">View Details &rarr;</a>
-          </div>
-        </div>
-        <div class="car-card" data-cat="new">
-          <div class="car-card-img-wrap"><img src="https://cdn.prod.website-files.com/5b4a3b3971d099f78f362505/656686d9b22efc7c74626a67_2021-Porsche-911-Carrera-s-Night%20Blue-WP0AB2A94MS222509_012.webp" class="car-card-img" alt="Porsche 911"><span class="car-badge new">New</span></div>
-          <div class="car-card-body">
-            <div class="car-make">Porsche</div><div class="car-name">911 Carrera S</div>
-            <div class="car-price">£110,000</div>
-            <div class="car-year">2023 &bull; 200 mi &bull; Manual &bull; Petrol</div>
-            <div class="car-specs">
-              <div class="car-spec"><span class="car-spec-icon">&#9881;</span>Manual</div>
-              <div class="car-spec"><span class="car-spec-icon">&#9981;</span>Petrol</div>
-              <div class="car-spec"><span class="car-spec-icon">&#128263;</span>450 BHP</div>
-            </div>
-            <a href="#" class="car-btn">View Details &rarr;</a>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
