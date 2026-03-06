@@ -402,14 +402,7 @@ function openModal(carId) {
   }
 
   document.getElementById("bcmQuickSpecs").innerHTML = [
-    { icon: "📅", label: "Year", val: car.year },
-    { icon: "🛣️", label: "Mileage", val: car.mileage },
-    { icon: "⚙️", label: "Gearbox", val: car.transmission },
-    { icon: "⛽", label: "Fuel", val: car.fuel },
-    { icon: "🎨", label: "Colour", val: car.color },
-    { icon: "🏎️", label: "Engine", val: car.engine },
-    { icon: "💺", label: "Seats", val: car.seats },
-    { icon: "🚪", label: "Doors", val: car.doors },
+    
   ]
     .map(
       (s) =>
