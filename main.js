@@ -1,6 +1,28 @@
 /* ── BRO CARS UK — main.js ── */
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!document.querySelector('link[href*="font-awesome"]')) {
+    const fa = document.createElement('link');
+    fa.rel = 'stylesheet';
+    fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+    document.head.appendChild(fa);
+  }
+
+  const page = location.pathname.split('/').pop() || 'index.html';
+
+  /* ── Mobile bottom nav ── */
+  if (!document.querySelector('.mobile-bottom-nav')) {
+    const bottomNav = document.createElement('nav');
+    bottomNav.className = 'mobile-bottom-nav';
+    bottomNav.setAttribute('aria-label', 'Mobile navigation');
+    bottomNav.innerHTML =
+      '<a href="index.html"><span class="mbn-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span class="mbn-label">Home</span></a>' +
+      '<a href="Our Vehicles.html"><span class="mbn-icon"><i class="fa-solid fa-car-side" aria-hidden="true"></i></span><span class="mbn-label">Vehicles</span></a>' +
+      '<a href="services.html"><span class="mbn-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span><span class="mbn-label">Services</span></a>' +
+      '<a href="about.html"><span class="mbn-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></span><span class="mbn-label">About</span></a>' +
+      '<a href="contact.html"><span class="mbn-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span class="mbn-label">Contact</span></a>';
+    document.body.appendChild(bottomNav);
+  }
 
   /* ── Mobile hamburger ── */
   const ham = document.getElementById('hamBtn');
@@ -13,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── Active nav link ── */
-  const page = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+  document.querySelectorAll('.nav-links a, .mobile-menu a, .mobile-bottom-nav a').forEach(a => {
     const href = a.getAttribute('href');
     if (href === page || (page === '' && href === 'index.html')) {
       a.classList.add('active');
