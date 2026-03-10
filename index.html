@@ -37,6 +37,16 @@
   .hero-heading span { color: var(--silver); }
   .hero-sub { font-size: 0.95rem; color: rgba(255,255,255,0.55); margin-bottom: 2.5rem; letter-spacing: 0.04em; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0; }
+  .btn-whatsapp {
+    background: #25d366;
+    color: #ffffff;
+    border-color: #25d366;
+  }
+  .btn-whatsapp:hover {
+    background: #1ea952;
+    border-color: #1ea952;
+    color: #ffffff;
+  }
   .hero-search {
     position: relative; z-index: 2;
     background: var(--white); border-radius: var(--radius-lg);
@@ -63,7 +73,10 @@
 
   @media(max-width:768px){
     .hero-search { grid-template-columns: 1fr; }
-    .home-hero { padding-bottom: 4rem; }
+    .home-hero {
+      min-height: 40vh;
+      padding: 2.5rem 1rem 2rem;
+    }
   }
 </style>
 </head>
@@ -118,7 +131,7 @@
     <p class="hero-sub reveal">Premium certified vehicles &bull; Transparent pricing &bull; Outstanding aftercare</p>
     <div class="hero-btns reveal">
       <a href="Our Vehicles.html" class="btn-secondary">Browse Our Vehicles</a>
-     <a href="https://wa.me/94771234567?text=Hi%20I%20am%20interested%20in%20this%20car" target="_blank" class="btn-outline-white">
+     <a href="https://wa.me/94771234567?text=Hi%20I%20am%20interested%20in%20this%20car" target="_blank" class="btn-outline-white btn-whatsapp">
   Chat with WhatsApp
 </a>
     </div>
@@ -144,15 +157,15 @@
     <button class="filter-tab" data-filter="used" data-target="#homeGrid">Used Cars</button>
   </div>
 
-  <div class="car-grid car-grid-3" id="homeGrid">
+    <div class="car-grid car-grid-3" id="homeGrid">
     <div class="car-card reveal" data-cat="new">
       <div class="car-card-img-wrap">
-        <img src="images/Ava-1.jpeg">
+        <img src="images/Ava-1.jpeg" alt="Peugeot">
         <span class="car-badge new">New</span>
       </div>
       <div class="car-card-body">
         <div class="car-make"></div>
-        <div class="car-name"> Peugeot</div>
+        <div class="car-name">Peugeot</div>
         <div class="car-price">£65,000</div>
         <div class="car-year">2023 &bull; 1,200 mi &bull; Petrol</div>
         <div class="car-specs">
@@ -163,16 +176,27 @@
         <a href="Our Vehicles.html" class="car-btn">View Details &rarr;</a>
       </div>
     </div>
-   
+
+    <div class="car-card reveal" data-cat="used">
+      <div class="car-card-img-wrap">
+        <img src="images/Ava-1.jpeg" alt="Peugeot Used">
+        <span class="car-badge used">Used</span>
       </div>
-    </div>
-   
+      <div class="car-card-body">
+        <div class="car-make"></div>
+        <div class="car-name">Peugeot</div>
+        <div class="car-price">£65,000</div>
+        <div class="car-year">2023 &bull; 1,200 mi &bull; Petrol</div>
+        <div class="car-specs">
+          <div class="car-spec"><span class="car-spec-icon">&#9881;</span>Auto</div>
+          <div class="car-spec"><span class="car-spec-icon">&#9981;</span>Petrol</div>
+          <div class="car-spec"><span class="car-spec-icon">&#128263;</span>510 BHP</div>
+        </div>
+        <a href="Our Vehicles.html" class="car-btn">View Details &rarr;</a>
       </div>
     </div>
   </div>
- 
 </div>
-
 <!-- BROWSE BY TYPE -->
 <div class="bg-light" style="border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);">
   <div class="section" style="padding:3.5rem 1.5rem;">
@@ -268,3 +292,4 @@
 <script src="main.js"></script>
 </body>
 </html>
+

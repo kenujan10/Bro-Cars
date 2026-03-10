@@ -175,10 +175,10 @@ const carData = [
       "Glass Roof",
     ],
     images: [
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=80",
-      "https://images.unsplash.com/photo-1536700503543-87d21e737f7e?w=900&q=80",
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=900&q=80",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&q=80",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1600&q=80",
+      "https://images.unsplash.com/photo-1536700503543-87d21e737f7e?w=1600&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1600&q=80",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1600&q=80",
     ],
   },
   {
@@ -209,10 +209,10 @@ const carData = [
       "Keyless Entry & Start",
     ],
     images: [
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&q=80",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80",
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=900&q=80",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&q=80",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1600&q=80",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1600&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1600&q=80",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1600&q=80",
     ],
   },
   {
@@ -244,9 +244,9 @@ const carData = [
     ],
     images: [
       "https://autonxt.net/wp-content/uploads/2025/08/2025-Audi-RS6-Avant22.jpg",
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&q=80",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&q=80",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1600&q=80",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1600&q=80",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1600&q=80",
     ],
   },
   {
@@ -277,10 +277,10 @@ const carData = [
       "Full Service History",
     ],
     images: [
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=900&q=80",
-      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=900&q=80",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80",
-      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=900&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1600&q=80",
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1600&q=80",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1600&q=80",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1600&q=80",
     ],
   },
   {
@@ -312,10 +312,50 @@ const carData = [
     ],
     images: [
       "images/Ava-1.jpeg",
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=900&q=80",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=80",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1600&q=80",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1600&q=80",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1600&q=80",
     ],
+  },
+  {
+    id: "sold-sprinter",
+    make: "Mercedes-Benz",
+    name: "Sprinter",
+    price: "Â£52,000",
+    badge: null,
+    description: "Previously sold vehicle. Browse available gallery photos.",
+    features: ["Sold Vehicle", "Gallery Available"],
+    images: ["images/s-2.jpeg", "images/s-3.jpeg", "images/s-4.jpeg", "images/s-5.jpeg", "images/s-6.jpeg"],
+  },
+  {
+    id: "sold-sprinter-314",
+    make: "Mercedes-Benz",
+    name: "Sprinter 314 CDI",
+    price: "Â£36,500",
+    badge: null,
+    description: "Previously sold vehicle. Browse available gallery photos.",
+    features: ["Sold Vehicle", "Gallery Available"],
+    images: ["images/ss-6.jpeg", "images/ss-2.jpeg", "images/ss-3.jpeg", "images/ss-4.jpeg", "images/ss-5.jpeg"],
+  },
+  {
+    id: "sold-sandero",
+    make: "Dacia",
+    name: "Sandero Stepway",
+    price: "Â£34,900",
+    badge: null,
+    description: "Previously sold vehicle. Browse available gallery photos.",
+    features: ["Sold Vehicle", "Gallery Available"],
+    images: ["images/sss-2.jpeg", "images/sss-1.jpeg", "images/sss-3.jpeg"],
+  },
+  {
+    id: "sold-evoque",
+    make: "Range Rover",
+    name: "Evoque R-Dynamic",
+    price: "Â£29,500",
+    badge: null,
+    description: "Previously sold vehicle. Browse available gallery photos.",
+    features: ["Sold Vehicle", "Gallery Available"],
+    images: ["images/ssss-2.jpeg", "images/ssss-1.jpeg", "images/ssss-3.jpeg", "images/ssss-4.jpeg", "images/ssss-5.jpeg", "images/ssss-6.jpeg"],
   },
 ];
 
@@ -357,11 +397,6 @@ function injectModal() {
 
         <div class="bcm-section-title">Key Features</div>
         <ul class="bcm-features" id="bcmFeatures"></ul>
-
-        <div class="bcm-actions">
-          <a href="contact.html" class="bcm-btn-primary">Enquire Now</a>
-          <a href="contact.html" class="bcm-btn-secondary">Book a Test Drive</a>
-        </div>
       </div>
     </div>
   </div>`;
@@ -463,10 +498,55 @@ function wireButtons() {
   });
 }
 
+function wireSoldButtons() {
+  const soldCards = document.querySelectorAll(".car-card.sold");
+  const soldIds = ["sold-sprinter", "sold-sprinter-314", "sold-sandero", "sold-evoque"];
+  soldCards.forEach((card, i) => {
+    const btn = card.querySelector(".sold-view-btn");
+    const img = card.querySelector(".car-card-img");
+    const wrap = card.querySelector(".car-card-img-wrap");
+    const soldCar = carData.find((c) => c.id === soldIds[i]);
+    if (!img || !wrap || !soldCar || !Array.isArray(soldCar.images) || soldCar.images.length === 0) return;
+
+    let photoIndex = 0;
+    if (btn) btn.style.display = "none";
+
+    const prev = document.createElement("button");
+    prev.className = "sold-img-arrow sold-img-prev";
+    prev.setAttribute("type", "button");
+    prev.setAttribute("aria-label", "Previous photo");
+    prev.textContent = "‹";
+
+    const next = document.createElement("button");
+    next.className = "sold-img-arrow sold-img-next";
+    next.setAttribute("type", "button");
+    next.setAttribute("aria-label", "Next photo");
+    next.textContent = "›";
+
+    wrap.appendChild(prev);
+    wrap.appendChild(next);
+
+    prev.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      photoIndex = (photoIndex - 1 + soldCar.images.length) % soldCar.images.length;
+      img.src = soldCar.images[photoIndex];
+    });
+
+    next.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      photoIndex = (photoIndex + 1) % soldCar.images.length;
+      img.src = soldCar.images[photoIndex];
+    });
+  });
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
   injectModal();
   wireButtons();
+  wireSoldButtons();
 
   document.getElementById("bcmClose").addEventListener("click", closeModal);
   document.getElementById("carModal").addEventListener("click", (e) => {

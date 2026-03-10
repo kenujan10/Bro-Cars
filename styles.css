@@ -859,25 +859,55 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     padding: 0 0.75rem;
     justify-content: flex-start;
   }
-  .navbar .brand {
-    gap: 0.4rem;
-    align-items: center;
+  /* Navbar Brand */
+.navbar .brand{
+  display:flex;
+  align-items:center;
+  gap:0.2rem;
+}
+.navbar .brand-text{
+  margin-left:-4px;
+}
+
+/* Logo */
+.navbar .logo-img{
+  height:80px;          /* logo bigger */
+  margin-top:-15px;     /* half outside navbar */
+  transform:none;
+  filter:drop-shadow(0 3px 8px rgba(0,0,0,0.4)) contrast(1.1);
+}
+
+/* Brand Name */
+.navbar .brand-name{
+  font-size:1.4rem;     /* bigger text */
+  letter-spacing:0.08em;
+  line-height:1;
+  font-weight:700;
+}
+
+/* Brand Sub Text */
+.navbar .brand-sub{
+  font-size:0.65rem;
+  letter-spacing:0.07em;
+  line-height:1.2;
+}
+@media (max-width:768px){
+
+  .navbar .logo-img{
+    height:120px;
+    margin-top:40px;
+    transform: translateY(px);
   }
-  .navbar .logo-img {
-    height: 62px;
-    transform: translateY(12px);
-    margin-top: 0;
+
+  .navbar .brand-name{
+    font-size:1.5rem;
   }
-  .navbar .brand-name {
-    font-size: 1.16rem;
-    letter-spacing: 0.08em;
-    line-height: 1;
+
+  .navbar .brand-sub{
+    font-size:0.7rem;
   }
-  .navbar .brand-sub {
-    font-size: 0.5rem;
-    letter-spacing: 0.07em;
-    line-height: 1.15;
-  }
+
+}
   .hamburger { display: none; }
   .mobile-menu { display: none !important; }
   .mobile-bottom-nav {
@@ -891,9 +921,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     background: #fff;
     border-top: 1px solid #e5e7eb;
     box-shadow: 0 -8px 20px rgba(0,0,0,0.08);
-    padding: 0.35rem 0.2rem calc(0.35rem + env(safe-area-inset-bottom));
+    padding: 0.25rem 0.2rem 0.25rem;
   }
-  body { padding-bottom: 72px; }
+  body { padding-bottom: 64px; }
   .nav-links { display: none; }
   .mobile-bottom-nav a { color: #000; }
   .mobile-bottom-nav .mbn-icon i { color: #000 !important; }
@@ -908,20 +938,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .sold-section .car-grid {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0.9rem;
+    gap: 0;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    padding: 0.2rem 0.2rem 0.8rem;
+    padding: 0 0 0.8rem;
   }
   .sold-section .car-grid::-webkit-scrollbar { display: none; }
   .sold-section .car-card.sold {
-    flex: 0 0 84%;
-    min-width: 260px;
-    max-width: 340px;
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   .about-split { grid-template-columns: 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
@@ -1100,6 +1131,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .car-card.sold .car-btn {
   display: none; /* Hide View Details button for sold cars */
+}
+.car-card.sold .sold-view-btn {
+  display: none !important;
+}
+.sold-img-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  cursor: pointer;
+}
+.sold-img-prev { left: 10px; }
+.sold-img-next { right: 10px; }
+.sold-img-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 /* ═══════════════════════════════════════════════════════
    Bro Cars UK — Car Details Modal + Image Gallery CSS
@@ -1617,3 +1674,336 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
 
 }
+
+/* Final navbar overrides */
+@media (min-width: 769px) {
+  .navbar .brand {
+    gap: 0.25rem;
+  }
+  .navbar .logo-img {
+    height: 124px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-inner {
+    justify-content: space-between;
+  }
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+  .mobile-bottom-nav {
+    display: grid !important;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  .mobile-menu.open {
+    display: block !important;
+  }
+}
+
+.navbar .brand-name {
+  letter-spacing: 0.02em !important;
+}
+
+@media (max-width: 768px) {
+  #homeGrid,
+  #invGrid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0 0 0.8rem !important;
+  }
+
+  #homeGrid::-webkit-scrollbar,
+  #invGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #homeGrid .car-card,
+  #invGrid .car-card {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+.inv-layout.inv-layout-full { grid-template-columns: 1fr; }
+
+@media (max-width: 768px) {
+  .bcm-overlay {
+    align-items: center !important;
+    padding: 12px !important;
+    background: rgba(8, 12, 18, 0.78) !important;
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+  }
+
+  .bcm-drawer {
+    width: min(96vw, 560px) !important;
+    max-height: 92vh !important;
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .bcm-gallery {
+    border-radius: 20px 20px 0 0 !important;
+    background: linear-gradient(180deg, #0f1724 0%, #060b13 100%) !important;
+    padding: 14px !important;
+    gap: 12px !important;
+  }
+
+  .bcm-main-img-wrap {
+    aspect-ratio: 4 / 3 !important;
+    max-height: none !important;
+    border-radius: 12px !important;
+    background: #0b1220 !important;
+  }
+
+  .bcm-main-img {
+    object-fit: cover !important;
+  }
+
+  .bcm-nav {
+    width: 38px !important;
+    height: 38px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.32) !important;
+  }
+
+  .bcm-close {
+    top: 12px !important;
+    right: 12px !important;
+    width: 38px !important;
+    height: 38px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(8, 14, 24, 0.75) !important;
+    color: #fff !important;
+  }
+
+  .bcm-thumbs {
+    gap: 8px !important;
+    padding: 2px 0 4px !important;
+  }
+
+  .bcm-thumb {
+    width: 72px !important;
+    height: 52px !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .bcm-details {
+    padding: 18px 16px 20px !important;
+    max-height: 42vh !important;
+  }
+}
+
+/* Mobile modal refinement */
+@media (max-width: 768px) {
+  .bcm-overlay {
+    padding: 8px !important;
+  }
+
+  .bcm-drawer {
+    width: 92vw !important;
+    max-height: 96vh !important;
+    border-radius: 16px !important;
+    overflow-y: auto !important;
+  }
+
+  .bcm-gallery {
+    padding: 10px !important;
+    gap: 8px !important;
+  }
+
+  .bcm-main-img-wrap {
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 10px !important;
+    width: 92% !important;
+    margin: 0 auto !important;
+  }
+
+  .bcm-thumb {
+    width: 64px !important;
+    height: 44px !important;
+  }
+
+  .bcm-details {
+    padding: 14px 12px 16px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    gap: 12px !important;
+  }
+
+  .bcm-name {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .bcm-price {
+    font-size: 1.05rem !important;
+  }
+
+  .bcm-features {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  .bcm-feature-item {
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .bcm-quick-specs:empty {
+    display: none !important;
+  }
+}
+
+/* Mobile image clarity boost */
+@media (max-width: 768px) {
+  .bcm-main-img-wrap {
+    width: 100% !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .bcm-main-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    image-rendering: auto;
+  }
+}
+
+/* Popup look to match reference (mobile) */
+@media (max-width: 768px) {
+  .bcm-overlay {
+    background: rgba(8, 8, 10, 0.88) !important;
+    backdrop-filter: blur(6px) !important;
+  }
+
+  .bcm-drawer {
+    width: 88vw !important;
+    max-height: 92vh !important;
+    border-radius: 18px !important;
+    background: #101113 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55) !important;
+  }
+
+  .bcm-gallery {
+    padding: 12px 12px 6px !important;
+    background: transparent !important;
+  }
+
+  .bcm-main-img-wrap {
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .bcm-close {
+    width: 34px !important;
+    height: 34px !important;
+    top: 10px !important;
+    right: 10px !important;
+    background: rgba(30, 30, 30, 0.9) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .bcm-details {
+    background: #101113 !important;
+    color: #f2f2f2 !important;
+    padding: 14px 14px 18px !important;
+    gap: 10px !important;
+  }
+
+  .bcm-make {
+    color: #a5a7ad !important;
+    letter-spacing: 0.08em !important;
+    font-size: 0.6rem !important;
+  }
+
+  .bcm-name {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+  }
+
+  .bcm-price {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+
+  .bcm-badge-tag {
+    background: #1aa872 !important;
+    color: #ffffff !important;
+    font-size: 0.55rem !important;
+  }
+
+  .bcm-quick-specs {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .bcm-spec-item {
+    background: #17181b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    padding: 10px 12px !important;
+  }
+
+  .bcm-spec-label {
+    color: #9aa0a6 !important;
+    font-size: 0.58rem !important;
+  }
+
+  .bcm-spec-val {
+    color: #f2f2f2 !important;
+    font-size: 0.78rem !important;
+  }
+
+  .bcm-section-title {
+    color: #d7d7d7 !important;
+  }
+
+  .bcm-desc {
+    color: #c6c6c6 !important;
+  }
+
+  .bcm-features {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .bcm-feature-item {
+    background: #17181b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+    color: #e8e8e8 !important;
+  }
+
+  .bcm-check {
+    color: #1aa872 !important;
+  }
+
+  .bcm-thumbs {
+    display: none !important;
+  }
+}
+
