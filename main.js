@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bottomNav.innerHTML =
       '<a href="index.html"><span class="mbn-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span class="mbn-label">Home</span></a>' +
       '<a href="Our Vehicles.html"><span class="mbn-icon"><i class="fa-solid fa-car-side" aria-hidden="true"></i></span><span class="mbn-label">Vehicles</span></a>' +
-      '<a href="services.html"><span class="mbn-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span><span class="mbn-label">Services</span></a>' +
       '<a href="about.html"><span class="mbn-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></span><span class="mbn-label">About</span></a>' +
+      '<a href="https://wa.me/94741561234"><span class="mbn-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span><span class="mbn-label">WhatsApp</span></a>' +
       '<a href="contact.html"><span class="mbn-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span class="mbn-label">Contact</span></a>';
     document.body.appendChild(bottomNav);
   }
