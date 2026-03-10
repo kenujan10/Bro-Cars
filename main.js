@@ -491,9 +491,15 @@ function wireButtons() {
   cards.forEach((card, i) => {
     const btn = card.querySelector(".car-btn");
     if (!btn || !ids[i]) return;
-    btn.addEventListener("click", (e) => {
+    const open = (e) => {
       e.preventDefault();
       openModal(ids[i]);
+    };
+    btn.addEventListener("click", open);
+    card.addEventListener("click", (e) => {
+      // Avoid double-handling if the button was clicked
+      if (e.target && e.target.closest(".car-btn")) return;
+      open(e);
     });
   });
 }
@@ -526,19 +532,27 @@ function wireSoldButtons() {
     wrap.appendChild(prev);
     wrap.appendChild(next);
 
+    const setImg = (idx) => {
+      photoIndex = (idx + soldCar.images.length) % soldCar.images.length;
+      img.src = soldCar.images[photoIndex];
+    };
+
     prev.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      photoIndex = (photoIndex - 1 + soldCar.images.length) % soldCar.images.length;
-      img.src = soldCar.images[photoIndex];
+      setImg(photoIndex - 1);
     });
 
     next.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      photoIndex = (photoIndex + 1) % soldCar.images.length;
-      img.src = soldCar.images[photoIndex];
+      setImg(photoIndex + 1);
     });
+
+    // Auto-rotate sold images every 2s
+    setInterval(() => {
+      setImg(photoIndex + 1);
+    }, 2000);
   });
 }
 

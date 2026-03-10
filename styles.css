@@ -122,7 +122,37 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover, .mobile-menu a.active { color: #fff; }
-.mobile-bottom-nav { display: none; background: #000; border-top: 1px solid rgba(255,255,255,0.08); }
+.mobile-bottom-nav { display: none; background: #000; border-top: none; position: relative; }
+.mobile-bottom-nav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: 2px;
+  background: #000;
+}
+
+/* Remove any stray line/gap above the mobile bottom nav */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    margin-top: 0 !important;
+  }
+  .mobile-bottom-nav::before {
+    top: -6px;
+    height: 6px;
+  }
+  .site-footer .footer-bottom {
+    border-top: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    padding-bottom: 0 !important;
+  }
+  .site-footer {
+    padding-bottom: 78px !important;
+  }
+}
 .mobile-bottom-nav a {
   display: flex;
   flex-direction: column;
@@ -141,7 +171,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 0.56rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+  text-transform: none;
   line-height: 1;
   color: #fff !important;
 }
@@ -205,8 +235,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 0.55rem;
 }
 .site-footer .logo-img {
-  width: 86px;
-  height: 86px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
   margin-top: 2px;
   filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.35));
@@ -934,19 +964,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hamburger { display: none; }
   .mobile-menu { display: none !important; }
   .mobile-bottom-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1400;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    background: #000;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 -8px 22px rgba(0,0,0,0.35);
-    padding: 0.25rem 0.2rem 0.25rem;
-  }
-  body { padding-bottom: 64px; }
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1400;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      background: #000;
+      border-top: none;
+      box-shadow: 0 -8px 22px rgba(0,0,0,0.35);
+      padding: 0.5rem 0.2rem 0.6rem;
+    }
+  body { padding-bottom: 78px; }
   .nav-links { display: none; }
   .mobile-bottom-nav a { color: #fff; }
   .mobile-bottom-nav .mbn-icon i { color: #fff !important; }
